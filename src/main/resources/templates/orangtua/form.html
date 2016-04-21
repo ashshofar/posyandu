@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head lang="en">
+        <title>Edit Orang Tua</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+    <body>
+        <h1>Edit Orang Tua</h1>
+        
+        <form th:action="@{/orangtua/form}" th:object="${orangtua}" method="post">
+            <table border="1">
+                <tbody>
+                    <tr>
+                        <td>Nama</td>
+                        <td><input type="text" th:field="*{nama}"/></td>
+                        <td th:if="${#fields.hasErrors('nama')}" th.errors="*{nama}"></td>
+                    </tr>
+                    <tr>
+                        <td>Tempat Lahir</td>
+                        <td><input type="text" th:field="*{tempatLahir}" /></td>
+                        <td th:if="${#fields.hasErrors('tempatLahir')}" th.errors="*{tempatLahir}"></td>
+                    </tr>
+                    <tr>
+                        <td>Tanggal Lahir</td>
+                        <td><input type="text" th:field="*{tanggalLahir}" /></td>
+                        <td th:if="${#fields.hasErrors('tanggalLahir')}" th.errors="*{tanggalLahir}"></td>
+                    </tr>
+                    <tr>
+                        <td>Jenis Kelamin</td>
+                        <td><input type="text" th:field="*{jenisKelamin}" /></td>
+                        <td th:if="${#fields.hasErrors('jenisKelamin')}" th.errors="*{tanggalLahir}"></td>
+                    </tr>
+                    <tr>
+                        <td>Alamat</td>
+                        <td><input type="text" th:field="*{alamat}" /></td>
+                        <td th:if="${#fields.hasErrors('alamat')}" th.errors="*{alamat}"></td>
+                    </tr>
+                    <tr>
+                        <td>Pekerjaan</td>
+                        <td><input type="text" th:field="*{pekerjaan}" /></td>
+                        <td th:if="${#fields.hasErrors('pekerjaan')}" th.errors="*{pekerjaan}"></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td><input type="submit" value="Simpan" /></td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </body>
+</html>

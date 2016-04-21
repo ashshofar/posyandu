@@ -1,0 +1,63 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <head lang="en">
+        <title>Edit Balita</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+    <body>
+        <h1>Edit Balita</h1>
+        
+        <form th:action="@{/balita/form}" th:object="${balita}" method="post">
+            <table border="1">
+                <tbody>
+                    <tr>
+                        <td>Nama</td>
+                        <td><input type="text" th:field="*{nama}"/></td>
+                        <td th:if="${#fields.hasErrors('nama')}" th.errors="*{nama}"></td>
+                    </tr>
+                    <tr>
+                        <td>Jenis Kelamin</td>
+                        <td><input type="text" th:field="*{jenisKelamin}"/></td>
+                        <td th:if="${#fields.hasErrors('jenisKelamin')}" th.errors="*{jenisKelamin}"></td>
+                    </tr>
+                    <tr>
+                        <td>Tempat Lahir</td>
+                        <td><input type="text" th:field="*{tempatLahir}"/></td>
+                        <td th:if="${#fields.hasErrors('tempatLahir')}" th.errors="*{tempatLahir}"></td>
+                    </tr>
+                    <tr>
+                        <td>Tanggal Lahir</td>
+                        <td><input type="text" th:field="*{tanggalLahir}"/></td>
+                        <td th:if="${#fields.hasErrors('tanggalLahir')}" th.errors="*{tanggalLahir}"></td>
+                    </tr>
+                    <tr>
+                        <td>Berat Lahir</td>
+                        <td><input type="text" th:field="*{beratLahir}"/></td>
+                        <td th:if="${#fields.hasErrors('beratLahir')}" th.errors="*{beratLahir}"></td>
+                    </tr>
+                    <tr>
+                        <td>Tinggi Lahir</td>
+                        <td><input type="text" th:field="*{tinggiLahir}"/></td>
+                        <td th:if="${#fields.hasErrors('tinggiLahir')}" th.errors="*{tinggiLahir}"></td>
+                    </tr>
+                    <tr>
+                        <td>Nama Ayah</td>
+                        <td><input type="text" th:field="*{ayah}"/></td>
+                        <td th:if="${#fields.hasErrors('ayah')}" th.errors="*{ayah}"></td>
+                    </tr>
+                    <tr>
+                        <td>Nama Ibu</td>
+                        <td><input type="text" th:field="*{ibu}"/></td>
+                        <td th:if="${#fields.hasErrors('ibu')}" th.errors="*{ibu}"></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td><input type="submit" value="Simpan" /></td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </body>
+</html>
+     

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:th = "http://www.thymeleaf.org">
+    <head>
+        <title>Daftar Orang Tua</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <h1>Daftar Orang Tua</h1>
+        
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Tempat Lahir</th>
+                    <th>Tanggal Lahir</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Alamat</th>
+                    <th>Pekerjaan</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="o : ${daftarOrangtua}">
+                    <td th:text="${o.nama}">nama</td>
+                    <td th:text="${o.tempatLahir}">tl</td>
+                    <td th:text="${o.tanggalLahir}">ttl</td>
+                    <td th:text="${o.jenisKelamin}">jk</td>
+                    <td th:text="${o.alamat}">alamat</td>
+                    <td th:text="${o.pekerjaan}">pekerjaan</td>
+                    <td>
+                        <a href="form.html" th:href="@{/orangtua/form(id=${o.id})}">
+                        edit 
+                        </a> | 
+                        <a href="view.html" th:href="@{/orangtua/view(id=${o.id})}">
+                        lihat 
+                        </a> | 
+                        <a href="hapus.html" th:href="@{/orangtua/hapus(id=${o.id})}">
+                        hapus
+                        </a>
+                        </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:th = "http://www.thymeleaf.org">
+    <head>
+        <title>Daftar Balita reload</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <h1>Daftar Balita</h1>
+        
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Tempat Lahir</th>
+                    <th>Tanggal Lahir</th>
+                    <th>Berat Lahir</th>
+                    <th>Tinggi Lahir</th>
+                    <th>Ayah</th>
+                    <th>Ibu</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="b : ${daftarBalita}">
+                    <td th:text="${b.nama}">nama</td>
+                    <td th:text="${b.jenisKelamin}">jk</td>
+                    <td th:text="${b.tempatLahir}">tl</td>
+                    <td th:text="${b.tanggalLahir}">ttl</td>
+                    <td th:text="${b.beratLahir}">ttl</td>
+                    <td th:text="${b.tinggiLahir}">jk</td>
+                    <td th:text="${b.ayah}">alamat</td>
+                    <td th:text="${b.ibu}">pekerjaan</td>
+                    <td>
+                        <a href="form.html" th:href="@{/balita/form(id=${b.id})}">
+                        edit 
+                        </a> | 
+                        <a href="view.html" th:href="@{/balita/view(id=${b.id})}">
+                        lihat 
+                        </a> | 
+                        <a href="hapus.html" th:href="@{/balita/hapus(id=${b.id})}">
+                        hapus
+                        </a>
+                        </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </body>
+</html>
