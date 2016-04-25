@@ -10,8 +10,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.hibernate.annotations.GenericGenerator;
@@ -52,10 +50,17 @@ public class User {
     @Column(nullable = false)
     private String password;
     
-    @ManyToOne
-    @JoinColumn(name = "id_jabatan", nullable = false)
-    private Jabatan jabatan;
+    @Column(nullable = false)
+    private boolean active;
 
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+    
     public String getId() {
         return id;
     }
@@ -112,15 +117,7 @@ public class User {
         this.username = username;
     }
 
-    public Jabatan getJabatan() {
-        return jabatan;
-    }
-
-    public void setJabatan(Jabatan jabatan) {
-        this.jabatan = jabatan;
-    }
-
-    public String getEmail() {
+   public String getEmail() {
         return email;
     }
 
