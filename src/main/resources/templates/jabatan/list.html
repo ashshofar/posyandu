@@ -34,13 +34,13 @@
                     <td th:text="${j.deskripsi}">Deskripsi</td>
                     <td>
                         <a href="form.html" th:href="@{/jabatan/show(id=${j.id})}">
-                        <button type="button" class="btn btn-success">Lihat</button>
+                        <button type="button" class="btn btn-success label">Lihat</button>
                         </a> 
                         <a href="view.html" th:href="@{/jabatan/form(id=${j.id})}">
-                        <button type="button" class="btn btn-primary">Edit</button> 
+                        <button type="button" class="btn btn-primary label">Edit</button> 
                         </a>                         
                         <a href="delete.html" th:href="@{/jabatan/delete(id=${j.id})}">
-                        <button type="button" class="btn btn-danger">Hapus</button>
+                        <button type="button" class="btn btn-danger label">Hapus</button>
                         </a>
                         </td>
                 </tr>

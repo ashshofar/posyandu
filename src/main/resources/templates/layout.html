@@ -297,6 +297,40 @@
         <script src="/js/datatables/responsive.bootstrap.min.js"></script>
         <script src="/js/datatables/dataTables.scroller.min.js"></script>
         
+        <!-- DataTables -->
+        <script>
+          var handleDataTableButtons = function() {
+              "use strict";
+              0 !== $("#datatable-buttons").length &amp;&amp; $("#datatable-buttons").DataTable({
+                dom: "Bfrtip",
+                buttons: [{
+                  extend: "copy",
+                  className: "btn-sm"
+                }, {
+                  extend: "csv",
+                  className: "btn-sm"
+                }, {
+                  extend: "excel",
+                  className: "btn-sm"
+                }, {
+                  extend: "pdf",
+                  className: "btn-sm"
+                }, {
+                  extend: "print",
+                  className: "btn-sm"
+                }],
+                responsive: !0
+              })
+            },
+            TableManageButtons = function() {
+              "use strict";
+              return {
+                init: function() {
+                  handleDataTableButtons()
+                }
+              }
+            }();
+        </script>
         <script type="text/javascript">
           $(document).ready(function() {
             $('#datatable').dataTable();
@@ -317,6 +351,7 @@
           });
           TableManageButtons.init();
         </script>
+        <!-- /DataTables -->
         
         <!-- form validation -->
         <script type="text/javascript">

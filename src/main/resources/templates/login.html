@@ -30,14 +30,17 @@ and open the template in the editor.
             <div id="login" class="animate form">
                 <section class="login_content">
                     <form name="f" th:action="@{/login}" method="post">
+                        
+                        
+                        <h1>Login Form</h1>
+                        
                         <div th:if="${param.error}" class="alert alert-error">
-                            Invalid Username and Password.
+                            Username atau Password Salah
                         </div>
                         <div th:if="${param.logout}" class="alert alert-error">
                             You Have Been Logged Out.
                         </div>
                         
-                        <h1>Login Form</h1>
                         <div>
                             <input type="text" class="form-control" placeholder="Username" required="" name="username" />
                         </div>
@@ -45,8 +48,7 @@ and open the template in the editor.
                             <input type="password" class="form-control" placeholder="Password" required="" name="password"/>
                         </div>
                         <div>
-                            <a class="btn btn-default submit" href="index.html">Log in</a>
-                            <input type="submit" value="Login"/>
+                            <a href="#" onclick="$(this).closest('form').submit()" class="btn btn-primary btn-block">Login</a>
                         </div>
                         <div class="clearfix"></div>
                         <div class="separator">
